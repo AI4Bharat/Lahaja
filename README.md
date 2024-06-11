@@ -57,6 +57,36 @@ The csv contains the following data with respect to the audio:
 
 ***
 
+## Model Training and Inference
+1. Install [NeMo](https://github.com/AI4Bharat/NeMo)
+
+2. Training command
+   ```
+   python ${RUNNER_PATH}/speech_to_text_hybrid_rnnt_ctc_bpe.py \
+    --config-path=${CONFIG_PATH} \
+    --config-name=${CONFIG_NAME} \
+    trainer.devices=-1 \
+    trainer.accelerator="gpu" \
+    trainer.strategy="ddp_find_unused_parameters_true" \
+    exp_manager.name=<exp_name> \
+    exp_manager.wandb_logger_kwargs.name=<exp_name> \
+    exp_manager.explicit_log_dir=$LOG_DIR 
+   ```
+
+3. Inference
+   ```
+   OMP_NUM_THREADS=64 python ${RUNNER_PATH}/transcribe_speech.py \
+        model_path=$MODEL_PATH \
+        dataset_manifest=$MANIFEST_PATH.json \
+        output_filename=$SAVE_FILE_NAME \
+        langid=$LANGID \
+        batch_size=64 \
+        compute_timestamps=False \
+        compute_langs=False \
+        cuda=$GPU_ID \
+        amp=True \
+        append_pred=False 
+   ```
 <!-- 
 # Citation
 If you benefit from this dataset, kindly cite as follows:
@@ -65,5 +95,3 @@ If you benefit from this dataset, kindly cite as follows:
 @misc{
     to be updated
 } -->
-```
-
