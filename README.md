@@ -8,10 +8,10 @@ Hindi, one of the most spoken language of India, exhibits a diverse array of acc
 |Resource name | link |
 | - | - |
 | Dataset | [Lahaja](https://huggingface.co/datasets/ai4bharat/Lahaja) |
-| Model - M1 | [Coming soon]() |
-| Model - M2 | [Coming soon]() |
-| Model - M3 | [Coming soon]() |
-| Model - M4 | [Coming soon]() |
+| Model - M1 | [M1](https://lahaja.objectstore.e2enetworks.net/m1.nemo) |
+| Model - M2 | [M2](https://lahaja.objectstore.e2enetworks.net/m2.nemo) |
+| Model - M3 | [M3](https://lahaja.objectstore.e2enetworks.net/m3.nemo) |
+| Model - M4 | [M4](https://lahaja.objectstore.e2enetworks.net/m4.nemo) |
 
 
 ## Dataset details
